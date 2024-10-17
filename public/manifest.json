@@ -1,0 +1,20 @@
+{
+  "name": "TTH CHAT",
+  "short_name": "TTH Chat",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4CAF50",
+  "icons": [
+    {
+      "src": "https://cdn.glitch.global/4de2ce0f-fff6-4f9f-9f3c-b0be2cf4d872/IMG_2291.webp?v=1729113034314",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn.glitch.global/4de2ce0f-fff6-4f9f-9f3c-b0be2cf4d872/IMG_2291.webp?v=1729113034314",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

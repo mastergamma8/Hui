@@ -1,0 +1,172 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Центрирование по вертикали */
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 90%; /* Уменьшена максимальная ширина для мобильных устройств */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px; /* Увеличен радиус для округления углов */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Более заметная тень */
+    overflow: hidden; /* Обрезка переполнения */
+}
+
+header {
+    background-color: #4CAF50; /* Зеленый цвет */
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px 10px 0 0; /* Округление верхних углов */
+}
+
+.online-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#online-count {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.status-green, .status-red {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.status-green {
+    background-color: green;
+}
+
+.status-red {
+    background-color: red;
+}
+
+#chat-window {
+    height: 300px;
+    overflow-y: scroll;
+    padding: 15px; /* Уменьшены отступы */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Светлый фон для окна чата */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.nickname-container {
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#nickname {
+    width: 100%; /* Полная ширина поля для никнейма */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Округление углов */
+}
+
+#chat-form {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+    align-items: stretch; /* Ширина по всей доступной ширине */
+    padding: 10px;
+}
+
+#message {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px; /* Отступ снизу для промежутка между элементами */
+}
+
+#fileInput {
+    display: none; /* Скрываем стандартный элемент */
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Плавный переход цвета и эффект при наведении */
+    margin-bottom: 5px; /* Отступ снизу для промежутка между элементами */
+}
+
+.custom-file-upload:hover {
+    background-color: #e0e0e0; /* Изменение цвета при наведении */
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Плавный переход цвета и эффект при наведении */
+    font-size: 16px; /* Размер шрифта кнопки */
+}
+
+button:hover {
+    background-color: #45a049; /* Темнее при наведении */
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+img:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+#typing-indicator {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666; /* Серый цвет для индикатора печати */
+}
+
+/* Медиазапросы для мобильных устройств */
+@media (max-width: 600px) {
+    #chat-window {
+        height: 250px; /* Уменьшение высоты окна чата на мобильных устройствах */
+    }
+
+    .chat-container {
+        padding: 15px; /* Уменьшение отступов для мобильных устройств */
+    }
+
+    header {
+        font-size: 18px; /* Увеличение размера шрифта заголовка на мобильных устройствах */
+    }
+
+    button {
+        width: 100%; /* Кнопка на всю ширину */
+        margin-top: 5px; /* Отступ сверху для кнопки */
+    }
+
+    #nickname {
+        width: 100%; /* Полная ширина поля для никнейма */
+    }
+}
