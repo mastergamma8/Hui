@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Канал {{ channel.name }}</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Канал: {{ channel.name }}</h1>
+
+  {{#if channel.pinnedPost}}
+    <div class="pinned-post">
+      <h2>Закрепленное сообщение:</h2>
+      <p>{{channel.pinnedPost.text}}</p>
+    </div>
+  {{/if}}
+
+  <ul>
+    {{#each channel.posts}}
+      <li>
+        {{ this.text }} <small>{{ this.timestamp }}</small>
+        {{#if this.media}}
+          <img src="{{ this.media }}" alt="media" style="max-width: 200px;">
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+
+  <form action="/channel/{{channel._id}}/post" method="POST" enctype="multipart/form-data">
+    <textarea name="text" placeholder="Написать сообщение"></textarea>
+    <input type="file" name="media">
+    <button type="submit">Отправить</button>
+  </form>
+
+  <a href="/">Назад</a>
+</body>
+</html>
